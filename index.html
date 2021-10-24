@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My little portfolio - Christopher Roman</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/framework.css">
+  <link rel="stylesheet" href="styles/core-styles.css">
+  <link rel="stylesheet" href="styles/grid-styles.css">
+
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://unpkg.com/vue-router"></script> -->
+
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<header class="bg-indigo column-1-2 row-1-2">
+		<nav class="d-flex f-col p-1">
+			<div class="d-flex flex-col gap-3">
+				<span>Comfort Stairlifts</span>
+			  <ul class="d-flex flex-col gap-1">
+				  <li> <router-link class="nav-link" to="/"> Home </router-link> </li>
+				  <li> <router-link class="nav-link" to="about"> About </router-link> </li>
+				  <li> <router-link class="nav-link" to="contact"> Contact </router-link> </li>
+			  </ul>
+			</div>
+		  </nav>
+	</header>
+
+	<main class="bg-sand column-1-4 row-1-2  h-100 w-100">
+		  <router-view></router-view>
+	</main>	
+</div>
+
+<!-- Vue Pages -->
+<script src="../pages/home.vue.js"></script>
+<script src="../pages/about.vue.js"></script>
+<script src="../pages/contact.vue.js"></script>
+
+<!-- Vue Instance and Routes -->
+<script>
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/contact', component: Contact }
+];
+
+const router = new VueRouter({
+  routes
+});
+
+const app = new Vue({
+  router
+}).$mount('#app')
+</script>
+<script>
+	// var routes = [
+	//   { path: '/', component: Home },
+	//   { path: '/about', component: About },
+	//   { path: '/contact', component: Contact }
+	// ];
+	
+	// var router = new VueRouter({
+	//   routes: routes,
+	//   mode: 'history',
+	//   base: '/'
+	// });
+	
+	// var app = new Vue({
+	// 	el: '#app',
+	// 	  router: router
+	// })
+</script>
+</body>
+</html>

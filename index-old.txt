@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page Title</title>
+
+
+  <link rel="stylesheet" href="styles/framework.css">
+  <link rel="stylesheet" href="styles/core-styles.css">
+  <link rel="stylesheet" href="styles/grid-styles.css">
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <!-- <script src="/path/to/vue.js"></script>
+  <script src="/path/to/vuex.js"></script> -->
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/vue-router"></script>
+
+</head>
+
+<body>
+  <div id="app" class="container" style="margin-top: 50px;"></div>
+  <header>
+    <span>
+      <a href="">Comfort Lift</a>
+    </span>
+    <a href="000-000-0000"></a>
+    <ul>
+			<li> <router-link class="nav-link" to="/"> Home </router-link> </li>
+			<li> <router-link class="nav-link" to="about"> About </router-link> </li>
+			<li> <router-link class="nav-link" to="contact"> Contact </router-link> </li>
+    </ul>
+    <ul>
+      <li>teams</li>
+      <li>Support</li>
+    </ul>
+  </header>
+  <main class="bg-sand column-2-4  h-100 w-100">
+    <div class="text-center" style="margin-top: 20px;">
+      <router-view></router-view>
+    </div>
+    <!-- <section id="hero">
+      <h1 class="serif">Trouvez La Solution a vos Escaliers</h1>
+      <a href="">Straight Stairlift</a>
+      <a href="">Curved Stairlift</a>
+    </section> -->
+    <!-- <section id="hero">
+
+    </section> -->
+  </main>
+</div>
+</body>
+<!-- Vue Pages -->
+<script src="pages/home.vue.js"></script>
+<script src="pages/about.vue.js"></script>
+<script src="pages/contact.vue.js"></script>
+
+<!-- Vue Instance and Routes -->
+<script>
+var routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/contact', component: Contact }
+];
+
+var router = new VueRouter({
+  routes: routes,
+  mode: 'history',
+  base: '/'
+});
+
+var app = new Vue({
+	el: '#app',
+  	router: router
+})
+</script>
+<!-- <script src="vue/index.js"></script> -->
+<!-- <script src="test.js"></script> -->
+</html>
